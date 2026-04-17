@@ -1,0 +1,157 @@
+/* ========================================
+   VenturaFin - Transaksi Page Styles
+   ======================================== */
+
+.transaksi-form-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 28px;
+    max-width: 680px;
+    margin: 0 auto; /* Center the form horizontally */
+    box-shadow: var(--shadow-sm);
+}
+
+/* Type Toggle */
+.type-toggle {
+    display: flex;
+    gap: 0;
+    background: var(--bg-body);
+    border-radius: var(--radius-md);
+    padding: 4px;
+    margin-bottom: 28px;
+}
+
+.toggle-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    color: var(--text-primary);
+}
+
+.toggle-btn.active[data-type="pemasukan"] {
+    background: var(--white);
+    color: var(--color-income);
+    box-shadow: var(--shadow-sm);
+}
+
+.toggle-btn.active[data-type="pengeluaran"] {
+    background: var(--white);
+    color: var(--color-expense);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Form */
+.transaksi-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-wrapper.currency {
+    position: relative;
+}
+
+.currency-prefix {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    pointer-events: none;
+}
+
+.input-wrapper.currency input {
+    padding-left: 42px;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    width: 100%;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 14px;
+    outline: none;
+    transition: all var(--transition-fast);
+    color: var(--text-primary);
+}
+
+.input-wrapper.currency input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-50);
+}
+
+.input-wrapper.currency input::placeholder {
+    color: var(--text-tertiary);
+    font-weight: 400;
+}
+
+
+/* --- Responsive --- */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .transaksi-form-card {
+        max-width: 100%;
+        padding: 24px;
+    }
+    .type-toggle {
+        margin-bottom: 24px;
+    }
+    .toggle-btn {
+        padding: 10px 16px;
+        font-size: var(--font-size-sm);
+    }
+    .transaksi-form {
+        gap: 16px;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .transaksi-form-card {
+        margin: 0;
+        padding: 16px;
+        border-radius: var(--radius-md);
+    }
+    .type-toggle {
+        margin-bottom: 20px;
+        padding: 3px;
+    }
+    .toggle-btn {
+        padding: 10px 12px;
+        font-size: var(--font-size-sm);
+        gap: 6px;
+    }
+    .toggle-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    .transaksi-form {
+        gap: 14px;
+    }
+    .input-wrapper.currency input {
+        font-size: var(--font-size-md);
+        padding-left: 38px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .currency-prefix {
+        font-size: var(--font-size-xs);
+        left: 12px;
+    }
+}

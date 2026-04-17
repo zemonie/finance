@@ -1,0 +1,197 @@
+/* ========================================
+   VenturaFin - Kategori Page Styles
+   ======================================== */
+
+.kategori-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.kategori-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.kategori-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.kategori-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--font-size-md);
+    font-weight: 600;
+}
+
+.kategori-header.income h2 {
+    color: var(--color-income);
+}
+
+.kategori-header.expense h2 {
+    color: var(--color-expense);
+}
+
+/* Category List */
+.kategori-list {
+    padding: 8px;
+}
+
+.kategori-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+}
+
+.kategori-item:hover {
+    background: var(--bg-hover);
+}
+
+.kategori-item-name {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kategori-item-name::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.kategori-item.income .kategori-item-name::before {
+    background: var(--color-income);
+}
+
+.kategori-item.expense .kategori-item-name::before {
+    background: var(--color-expense);
+}
+
+.kategori-item-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.kategori-item:hover .kategori-item-actions {
+    opacity: 1;
+}
+
+.kat-action-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    color: var(--text-tertiary);
+    transition: all var(--transition-fast);
+}
+
+.kat-action-btn:hover {
+    background: var(--bg-body);
+    color: var(--text-primary);
+}
+
+.kat-action-btn.delete:hover {
+    background: var(--color-expense-bg);
+    color: var(--color-expense);
+}
+
+.kategori-empty {
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 768px) {
+    .kategori-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .kategori-header {
+        padding: 16px 20px;
+    }
+    .kategori-header h2 {
+        font-size: var(--font-size-base);
+    }
+    .kategori-item {
+        padding: 10px 14px;
+    }
+    .kategori-item-name {
+        font-size: var(--font-size-sm);
+    }
+    .kategori-item-actions {
+        opacity: 1;
+    }
+    .kat-action-btn {
+        width: 28px;
+        height: 28px;
+    }
+    .kategori-empty {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kategori-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .kategori-card {
+        border-radius: var(--radius-md);
+    }
+    .kategori-header {
+        padding: 12px 16px;
+    }
+    .kategori-header h2 {
+        font-size: var(--font-size-sm);
+        gap: 8px;
+    }
+    .kategori-header h2 svg {
+        width: 18px;
+        height: 18px;
+    }
+    .kategori-list {
+        padding: 6px;
+    }
+    .kategori-item {
+        padding: 10px 12px;
+    }
+    .kategori-item-name {
+        font-size: var(--font-size-sm);
+        gap: 8px;
+    }
+    .kategori-item-actions {
+        gap: 2px;
+    }
+    .kat-action-btn {
+        width: 24px;
+        height: 24px;
+    }
+    .kat-action-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+    .kategori-empty {
+        padding: 20px 16px;
+        font-size: var(--font-size-xs);
+    }
+}

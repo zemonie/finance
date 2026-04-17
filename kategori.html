@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VenturaFin - Pengaturan Kategori Transaksi">
+    <title>VenturaFin — Pengaturan Kategori</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/kategori.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <main class="main-content">
+            <header class="top-header" id="topHeader"></header>
+            <div class="content-area">
+                <div class="page-heading">
+                    <h1>Pengaturan Kategori</h1>
+                    <p>Kelola kategori pemasukan dan pengeluaran</p>
+                </div>
+
+                <div class="kategori-grid">
+                    <!-- Kategori Pemasukan -->
+                    <div class="kategori-card">
+                        <div class="kategori-header income">
+                            <h2>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                                Kategori Pemasukan
+                            </h2>
+                            <button class="btn btn-sm btn-income" id="btnAddKatPemasukan">+ Tambah</button>
+                        </div>
+                        <div class="kategori-list" id="listKatPemasukan">
+                        </div>
+                    </div>
+
+                    <!-- Kategori Pengeluaran -->
+                    <div class="kategori-card">
+                        <div class="kategori-header expense">
+                            <h2>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+                                Kategori Pengeluaran
+                            </h2>
+                            <button class="btn btn-sm btn-expense" id="btnAddKatPengeluaran">+ Tambah</button>
+                        </div>
+                        <div class="kategori-list" id="listKatPengeluaran">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add/Edit Category Modal -->
+                <div class="modal-overlay" id="kategoriModal" style="display:none">
+                    <div class="modal-card modal-form">
+                        <div class="modal-header">
+                            <h3 id="kategoriModalTitle">Tambah Kategori</h3>
+                            <button class="modal-close" id="btnCloseKategoriModal">&times;</button>
+                        </div>
+                        <form id="kategoriForm">
+                            <input type="hidden" id="editKategoriId" value="">
+                            <input type="hidden" id="editKategoriType" value="pemasukan">
+                            <div class="form-group">
+                                <label for="kategoriName">Nama Kategori</label>
+                                <input type="text" id="kategoriName" required placeholder="Masukkan nama kategori">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" id="btnCancelKategori">Batal</button>
+                                <button type="submit" class="btn btn-primary" id="btnSaveKategori">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Delete Confirmation Modal -->
+                <div class="modal-overlay" id="deleteKatModal" style="display:none">
+                    <div class="modal-card">
+                        <div class="modal-icon danger">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </div>
+                        <h3>Hapus Kategori?</h3>
+                        <p>Kategori yang dihapus tidak dapat dikembalikan.</p>
+                        <div class="modal-actions">
+                            <button class="btn btn-secondary" id="btnCancelDeleteKat">Batal</button>
+                            <button class="btn btn-danger" id="btnConfirmDeleteKat">Hapus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toast" id="kategoriToast" style="display:none">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span id="kategoriToastText">Berhasil disimpan!</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/kategori.js"></script>
+</body>
+</html>

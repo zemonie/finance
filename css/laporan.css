@@ -1,0 +1,222 @@
+/* ========================================
+   VenturaFin - Laporan Page Styles
+   ======================================== */
+
+.period-selector-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+.period-controls {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.period-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.period-group label {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.period-group select {
+    padding: 10px 14px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    background: var(--white);
+    outline: none;
+    transition: all var(--transition-fast);
+    min-width: 140px;
+}
+
+.period-group select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-50);
+}
+
+/* Report Summary */
+.report-summary {
+    margin-bottom: 24px;
+}
+
+.report-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.report-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.report-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.rc-label {
+    display: block;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+}
+
+.rc-value {
+    display: block;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.income-card {
+    border-left: 3px solid var(--color-income);
+}
+.income-card .rc-value {
+    color: var(--color-income);
+}
+
+.expense-card {
+    border-left: 3px solid var(--color-expense);
+}
+.expense-card .rc-value {
+    color: var(--color-expense);
+}
+
+.balance-card {
+    border-left: 3px solid var(--color-primary);
+}
+
+.count-card {
+    border-left: 3px solid var(--color-accent);
+}
+
+/* Report Charts */
+.report-charts {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.report-table-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.report-table-card .section-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+@media (max-width: 1200px) {
+    .report-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .report-charts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .period-selector-card {
+        padding: 16px 20px;
+        margin-bottom: 20px;
+    }
+    .period-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .period-group {
+        gap: 4px;
+    }
+    .period-group select {
+        padding: 8px 12px;
+        font-size: var(--font-size-sm);
+        min-width: unset;
+    }
+    .report-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .report-card {
+        padding: 16px 20px;
+    }
+    .rc-value {
+        font-size: var(--font-size-lg);
+    }
+    .report-charts {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .report-table-card .section-header {
+        padding: 16px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .period-selector-card {
+        padding: 12px 16px;
+        margin-bottom: 16px;
+        border-radius: var(--radius-md);
+    }
+    .period-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .period-group {
+        gap: 3px;
+    }
+    .period-group label {
+        font-size: 10px;
+    }
+    .period-group select {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    .report-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .report-card {
+        padding: 12px 16px;
+    }
+    .rc-label {
+        margin-bottom: 6px;
+        font-size: 10px;
+    }
+    .rc-value {
+        font-size: var(--font-size-md);
+    }
+    .report-charts {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .report-table-card .section-header {
+        padding: 12px 16px;
+    }
+}

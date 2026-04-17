@@ -1,0 +1,123 @@
+/* ========================================
+   VenturaFin - Users Page Styles
+   ======================================== */
+
+.user-actions-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Status badges in table */
+.status-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.status-toggle.active {
+    background: var(--color-income-bg);
+    color: var(--color-income);
+}
+
+.status-toggle.inactive {
+    background: var(--bg-hover);
+    color: var(--text-tertiary);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* User row avatar */
+.user-row-avatar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-mini-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.user-mini-avatar span {
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+}
+
+.user-mini-avatar.admin-avatar {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+}
+
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+    .user-actions-bar {
+        margin-bottom: 16px;
+    }
+    .user-actions-bar .btn {
+        padding: 8px 16px;
+        font-size: var(--font-size-sm);
+    }
+    .status-toggle {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+    .user-row-avatar {
+        gap: 10px;
+    }
+    .user-mini-avatar {
+        width: 30px;
+        height: 30px;
+    }
+    .user-mini-avatar span {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-actions-bar {
+        margin-bottom: 12px;
+    }
+    .user-actions-bar .btn {
+        padding: 8px 12px;
+        font-size: var(--font-size-xs);
+        min-height: 40px;
+    }
+    .status-toggle {
+        padding: 3px 8px;
+        font-size: 9px;
+    }
+    .status-dot {
+        width: 5px;
+        height: 5px;
+    }
+    .user-row-avatar {
+        gap: 8px;
+    }
+    .user-mini-avatar {
+        width: 28px;
+        height: 28px;
+    }
+    .user-mini-avatar span {
+        font-size: 9px;
+    }
+}

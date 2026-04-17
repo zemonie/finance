@@ -1,0 +1,201 @@
+/* ========================================
+   VenturaFin - Profil Page Styles
+   ======================================== */
+
+.profil-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.profil-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 28px;
+}
+
+.profil-card h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.profil-card .form-group {
+    margin-bottom: 18px;
+}
+
+/* Photo Section */
+.photo-card {
+    grid-row: span 2;
+}
+
+.photo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-initials {
+    color: white;
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.photo-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.profile-info-summary {
+    text-align: center;
+}
+
+.profile-info-summary h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    background: var(--color-accent-bg);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+}
+
+.profile-email-display {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 900px) {
+    .profil-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .photo-card {
+        grid-row: auto;
+    }
+    .profil-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profil-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .profil-card {
+        padding: 20px;
+    }
+    .profil-card h2 {
+        font-size: var(--font-size-md);
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+    .profil-card .form-group {
+        margin-bottom: 14px;
+    }
+    .photo-section {
+        gap: 12px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .profile-photo {
+        width: 80px;
+        height: 80px;
+    }
+    .photo-initials {
+        font-size: var(--font-size-2xl);
+    }
+    .profile-info-summary h3 {
+        font-size: var(--font-size-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .profil-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .profil-card {
+        padding: 16px;
+        border-radius: var(--radius-md);
+    }
+    .profil-card h2 {
+        font-size: var(--font-size-base);
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+    }
+    .profil-card .form-group {
+        margin-bottom: 12px;
+    }
+    .photo-section {
+        gap: 10px;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+    }
+    .profile-photo {
+        width: 70px;
+        height: 70px;
+    }
+    .photo-initials {
+        font-size: var(--font-size-xl);
+    }
+    .photo-actions {
+        width: 100%;
+        gap: 6px;
+    }
+    .photo-actions .btn {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: var(--font-size-xs);
+    }
+    .profile-info-summary h3 {
+        font-size: var(--font-size-base);
+        margin-bottom: 4px;
+    }
+    .role-badge {
+        font-size: 10px;
+        padding: 2px 10px;
+    }
+    .profile-email-display {
+        font-size: var(--font-size-xs);
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VenturaFin - Input Transaksi Pemasukan & Pengeluaran">
+    <title>VenturaFin — Input Transaksi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/transaksi.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <main class="main-content">
+            <header class="top-header" id="topHeader"></header>
+            <div class="content-area">
+                <div class="page-heading">
+                    <h1>Input Transaksi</h1>
+                    <p>Tambahkan transaksi pemasukan atau pengeluaran baru</p>
+                </div>
+
+                <div class="transaksi-form-card">
+                    <div class="type-toggle">
+                        <button class="toggle-btn active" data-type="pemasukan" id="btnPemasukan">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                            Pemasukan
+                        </button>
+                        <button class="toggle-btn" data-type="pengeluaran" id="btnPengeluaran">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+                            Pengeluaran
+                        </button>
+                    </div>
+
+                    <form id="transaksiForm" class="transaksi-form">
+                        <input type="hidden" id="transaksiType" value="pemasukan">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="transaksiNominal">Nominal (Rp)</label>
+                                <div class="input-wrapper currency">
+                                    <span class="currency-prefix">Rp</span>
+                                    <input type="text" id="transaksiNominal" placeholder="0" required inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="transaksiTanggal">Tanggal</label>
+                                <input type="date" id="transaksiTanggal" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="transaksiKategori">Kategori</label>
+                                <select id="transaksiKategori" required>
+                                    <option value="">Pilih Kategori</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transaksiKeterangan">Keterangan</label>
+                            <textarea id="transaksiKeterangan" rows="3" placeholder="Deskripsi transaksi..." required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="reset" class="btn btn-secondary" id="btnReset">Reset</button>
+                            <button type="submit" class="btn btn-primary" id="btnSimpan">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                                Simpan Transaksi
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success Toast -->
+                <div class="toast" id="successToast" style="display:none">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span>Transaksi berhasil disimpan!</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/transaksi.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VenturaFin - Profil Pengguna">
+    <title>VenturaFin — Profil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/profil.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <main class="main-content">
+            <header class="top-header" id="topHeader"></header>
+            <div class="content-area">
+                <div class="page-heading">
+                    <h1>Profil Saya</h1>
+                    <p>Kelola informasi dan keamanan akun Anda</p>
+                </div>
+
+                <div class="profil-grid">
+                    <!-- Profile Photo Card -->
+                    <div class="profil-card photo-card">
+                        <div class="photo-section">
+                            <div class="profile-photo" id="profilePhoto">
+                                <span class="photo-initials" id="photoInitials">A</span>
+                                <img id="profileImage" src="" alt="Foto Profil" style="display:none">
+                            </div>
+                            <div class="photo-actions">
+                                <label class="btn btn-secondary btn-sm" for="photoUpload">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    Upload Foto
+                                </label>
+                                <input type="file" id="photoUpload" accept="image/*" style="display:none">
+                                <button class="btn btn-ghost btn-sm" id="btnRemovePhoto">Hapus</button>
+                            </div>
+                        </div>
+                        <div class="profile-info-summary">
+                            <h3 id="profileNameDisplay">-</h3>
+                            <span class="role-badge" id="profileRoleDisplay">User</span>
+                            <p class="profile-email-display" id="profileEmailDisplay">-</p>
+                        </div>
+                    </div>
+
+                    <!-- Edit Info Card -->
+                    <div class="profil-card info-card">
+                        <h2>Informasi Pribadi</h2>
+                        <form id="profilForm">
+                            <div class="form-group">
+                                <label for="profilNama">Nama Lengkap</label>
+                                <input type="text" id="profilNama" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profilEmail">Email</label>
+                                <input type="email" id="profilEmail" required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Change Password Card -->
+                    <div class="profil-card password-card">
+                        <h2>Ganti Password</h2>
+                        <form id="passwordForm">
+                            <div class="form-group">
+                                <label for="currentPassword">Password Saat Ini</label>
+                                <input type="password" id="currentPassword" required placeholder="Masukkan password saat ini">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">Password Baru</label>
+                                <input type="password" id="newPassword" required placeholder="Minimal 6 karakter">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Konfirmasi Password Baru</label>
+                                <input type="password" id="confirmPassword" required placeholder="Ulangi password baru">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Ganti Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="toast" id="profilToast" style="display:none">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span id="profilToastText">Berhasil disimpan!</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/profil.js"></script>
+</body>
+</html>
